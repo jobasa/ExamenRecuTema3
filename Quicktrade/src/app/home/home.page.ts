@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  titulo : string = "Información sobre productos";
+  motorOculto : boolean = true;
+  inmobiliariaOculto : boolean = true;
+  tecnologiaOculto : boolean = true;
+  categoria : Number = 1;
+  nombre : string = "";
+
+    constructor() { }
+
+    cambiar_Oculto($event){
+      console.log($event.target.value);
+      this.categoria=$event.target.value;
+    }
 
 }
