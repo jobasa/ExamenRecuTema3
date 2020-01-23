@@ -11,12 +11,12 @@
     <ion-item>
       <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input  [type]="nombre" oninput=""></ion-input>
+      <ion-input  [type]="Text" [(ngModel)]="nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Descripción</ion-label>
-      <ion-textarea placeholder="Describa el producto"></ion-textarea>
+      <ion-textarea placeholder="Describa el producto" [(ngModel)]="descripcion"></ion-textarea>
     </ion-item>
 
     <ion-item>
@@ -37,7 +37,7 @@
 
         <ion-item>
           <ion-label>Tipo</ion-label>
-          <ion-select placeholder="Selecciona uno">
+          <ion-select placeholder="Selecciona uno" [(ngModel)]="vehiculo">
             <ion-select-option value="1">Coche</ion-select-option>
             <ion-select-option value="2">Moto</ion-select-option>
           </ion-select>
@@ -46,37 +46,37 @@
 
       <ion-item>
         <ion-label position="stacked">Kilómetros</ion-label>
-        <ion-input  type="number" oninput=""></ion-input>
+        <ion-input  type="number" [(ngModel)]="kilometros"></ion-input>
       </ion-item>
 
       <ion-label position="stacked">Años</ion-label>
-      <ion-input  type="number" oninput=""></ion-input>
+      <ion-input  type="number" [(ngModel)]="anyos"></ion-input>
     </div>
 
     <div *ngIf="categoria == 3">
       <ion-label position="stacked">Metros cuadrados de la vivienda</ion-label>
-      <ion-input  type="number" oninput=""></ion-input>
+      <ion-input  type="number" [(ngModel)]="metrosCuadrados"></ion-input>
 
       <ion-item>
         <ion-label position="stacked">Número de baños</ion-label>
-        <ion-input  type="number"  oninput=""></ion-input>
+        <ion-input  type="number"  [(ngModel)]="numBanyos"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Número de habitaciones</ion-label>
-        <ion-input  type="number"  oninput=""></ion-input>
+        <ion-input  type="number"  [(ngModel)]="numHabitaciones"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Localidad</ion-label>
-        <ion-input  type="Text" oninput=""></ion-input>
+        <ion-input  type="Text" [(ngModel)]="localidad"></ion-input>
       </ion-item>
 
     </div>
 
     <div  *ngIf="categoria == 1"   >
       <ion-label>Estado del producto</ion-label>
-      <ion-select placeholder="Selecciona uno">
+      <ion-select placeholder="Selecciona uno" [(ngModel)]="estado">
         <ion-select-option value="1">Perfecto estado</ion-select-option>
         <ion-select-option value="2">Usado</ion-select-option>
       </ion-select>
@@ -85,7 +85,7 @@
     <ion-item>
       <ion-label position="stacked">Precio <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input  type="number" oninput=""></ion-input>
+      <ion-input  type="number" [(ngModel)]="precio"></ion-input>
     </ion-item>
 
   </div>

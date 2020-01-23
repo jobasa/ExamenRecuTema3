@@ -7,18 +7,29 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  titulo : string = "Información sobre productos";
-  motorOculto : boolean = true;
-  inmobiliariaOculto : boolean = true;
-  tecnologiaOculto : boolean = true;
-  categoria : Number = 1;
-  nombre : string = "";
+  titulo: string = "Información sobre productos";
+  motorOculto: boolean = true;
+  inmobiliariaOculto: boolean = true;
+  tecnologiaOculto: boolean = true;
+  nombre: string = "";
+  descripcion: string = "";
+  categoria: Number = 1;
+  vehiculo: Number = 1;
+  kilometros: Number = 0;
+  anyos: Number = 0;
+  metrosCuadrados: Number = 0;
+  numBanyos: Number = 0;
+  numHabitaciones: Number = 0;
+  localidad: string = "";
+  estado: Number = 1;
+  precio: Number = 0;
 
-    constructor() { }
 
-    cambiar_Oculto($event){
-      console.log($event.target.value);
-      this.categoria=$event.target.value;
-    }
+  constructor() { }
+
+  cambiar_Oculto($event) {
+    console.log($event.target.value);
+    this.categoria = $event.target.value;
+  }
 
 }
