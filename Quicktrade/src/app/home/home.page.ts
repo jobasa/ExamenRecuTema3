@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IProducto, Inmobiliaria, IMotor, ITecnologia} from '../interfaces';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -23,13 +25,48 @@ export class HomePage {
   localidad: string = "";
   estado: Number = 1;
   precio: Number = 0;
+  listadoProductos: (IProducto | Inmobiliaria | IMotor | ITecnologia) [] = [];
 
+  public alertController: AlertController
 
-  constructor() { }
+    async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   cambiar_Oculto($event) {
     console.log($event.target.value);
     this.categoria = $event.target.value;
+  }
+
+  guarda(){
+    if (this.categoria == 1) {
+      this.listadoProductos.push({
+        id : this.listadoProductos.length+1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else if (this.categoria == 4) {
+      this.listadoProductos.push({
+        id : this.listadoProductos.length+1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, kilometros : this.kilometros, anyos : this.anyos, categoria : this.categoria, vehiculo : this.vehiculo
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else if (this.categoria == 3) {
+      this.listadoProductos.push({
+        id: this.listadoProductos.length+1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, metrosCuadrados : this.metrosCuadrados, numBanyos : this.numBanyos, numHabitaciones : this.numHabitaciones, localidad : this.localidad, categoria : this.categoria 
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else {
+      this.listadoProductos.push({
+        id : this.listadoProductos.length+1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria
+      });
+      alert("La inserción se ha hecho correctamente");
+    }
   }
 
 }
