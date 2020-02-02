@@ -8,6 +8,14 @@ const routes: Routes = [
     path: 'details/:id',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'listado',
+    loadChildren: () => import('./listado/listado.module').then( m => m.ListadoPageModule)
+  },
 ];
 
 @NgModule({
