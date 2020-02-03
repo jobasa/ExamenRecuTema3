@@ -5,5 +5,20 @@
 </ion-header>
 
 <ion-content>
-
+  <div *ngFor="let elemento of productos">
+    <ion-item-divider>
+      <ion-item>
+        Nombre: {{elemento.nombre}}
+      </ion-item>
+      <ion-item>
+        Descripcion: {{elemento.descripcion}}
+      </ion-item>
+      <ion-item>
+        Precio: {{elemento.precio}}€
+      </ion-item>
+      <div>
+        <ion-button color="success" [routerLink]="['/details/', elemento.id]" routerDirection="root">Detalles</ion-button>
+      </div>
+    </ion-item-divider>
+  </div>
 </ion-content>

@@ -8,7 +8,24 @@ import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
 
 export class ProductoService {
 
-    productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [];
+    productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [
+        {
+            "id": 1,
+            "nombre": "Joan",
+            "descripcion": "Xico Alto y guapo",
+            "categoria": 2,
+            "precio": 500
+        },
+
+        {
+            "id": 2,
+            "nombre": "Javi",
+            "descripcion": "Xico",
+            "categoria": 3,
+            "estado": 1,
+            "precio": 500
+        },
+    ];
 
 
 
@@ -16,5 +33,5 @@ export class ProductoService {
         return this.productos;
     }
 
-    
+
 }

@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.page.html',
   styleUrls: ['./listado.page.scss'],
 })
+
 export class ListadoPage implements OnInit {
 
-  constructor() { }
+  productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [];
+
+  constructor(private _ProductoService : ProductoService) { }
 
   ngOnInit() {
+    this.productos = this._ProductoService.getProductos();
   }
 
 }
