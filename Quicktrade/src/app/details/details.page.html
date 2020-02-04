@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
-
+ <div *ngIf="producto.categoria == 4">
+   <ion-text>Nombre: {{producto.nombre}}</ion-text>
+   <p></p>
+   <ion-text>Descripción: {{producto.descripcion}}</ion-text>
+   <p></p>
+   <ion-text>Tipo de vehículo: {{producto.vehiculo}}</ion-text>
+   <p></p>
+   <ion-text>kilómetros: {{producto.kilometros}}</ion-text>
+   <p></p>
+   <ion-text>Precio:: {{producto.precio}}</ion-text>
+ </div>
 </ion-content>

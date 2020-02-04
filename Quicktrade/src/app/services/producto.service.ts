@@ -33,5 +33,9 @@ export class ProductoService {
         return this.productos;
     }
 
+    getProducto(id: Number): (IProducto | Inmobiliaria | IMotor | ITecnologia)[] {
+        return this.productos.find(x => x.id == id)[0];
+    }
+
 
 }

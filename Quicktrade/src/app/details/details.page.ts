@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { ProductoService } from '../services/producto.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [];
+  id : Number;
+
+  constructor(private _ProductoService : ProductoService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    //Recibe un id
+    this.id = +this._activatedRoute.snapshot.paramMap.get('id');
+
+    this._ProductoService.getProducto(this.id);
   }
 
 }
