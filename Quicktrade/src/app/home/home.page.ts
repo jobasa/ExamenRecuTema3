@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProducto, Inmobiliaria, IMotor, ITecnologia} from '../interfaces';
+import { IProducto, IInmobiliaria, IMotor, ITecnologia} from '../interfaces';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -25,7 +25,7 @@ export class HomePage {
   localidad: string = "";
   estado: Number = 1;
   precio: Number = 0;
-  listadoProductos: (IProducto | Inmobiliaria | IMotor | ITecnologia) [] = [];
+  listadoProductos: (IProducto | IInmobiliaria | IMotor | ITecnologia) [] = [];
 
   public alertController: AlertController
 

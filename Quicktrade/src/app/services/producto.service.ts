@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { IProducto, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
 
 
 @Injectable()
@@ -8,7 +8,7 @@ import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
 
 export class ProductoService {
 
-    productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [
+    productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [
         {
             "id": 1,
             "nombre": "Joan",
@@ -29,11 +29,11 @@ export class ProductoService {
 
 
 
-    getProductos(): (IProducto | Inmobiliaria | IMotor | ITecnologia)[] {
+    getProductos(): (IProducto | IInmobiliaria | IMotor | ITecnologia)[] {
         return this.productos;
     }
 
-    getProducto(id: Number): (IProducto | Inmobiliaria | IMotor | ITecnologia)[] {
+    getProducto(id: Number): (IProducto | IInmobiliaria | IMotor | ITecnologia)[] {
         return this.productos.find(x => x.id == id)[0];
     }
 

@@ -9,7 +9,7 @@ export interface IProducto {
     "categoria": Number;
 }
 
-export interface Inmobiliaria extends IProducto {
+export interface IInmobiliaria extends IProducto {
     "metrosCuadrados" : Number;
     "numBanyos" : Number;
     "numHabitaciones" : Number;

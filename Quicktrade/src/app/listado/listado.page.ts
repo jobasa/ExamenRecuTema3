@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { IProducto, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
 import { ProductoService } from '../services/producto.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductoService } from '../services/producto.service';
 
 export class ListadoPage implements OnInit {
 
-  productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [];
+  productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
 
   constructor(private _ProductoService : ProductoService) { }
 

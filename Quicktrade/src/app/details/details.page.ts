@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProducto, Inmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { IProducto, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
 import { ProductoService } from '../services/producto.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  productos: (IProducto | Inmobiliaria | IMotor | ITecnologia)[] = [];
+  productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
   id : Number;
 
   constructor(private _ProductoService : ProductoService, private _activatedRoute: ActivatedRoute) { }
