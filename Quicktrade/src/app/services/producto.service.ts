@@ -14,7 +14,8 @@ export class ProductoService {
             "id": 1,
             "nombre": "Joan",
             "descripcion": "Xico",
-            "categoria": 2,
+            "categoria": 1,
+            "estado": 2,
             "precio": 500
         },
 
