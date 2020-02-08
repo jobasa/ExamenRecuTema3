@@ -10,16 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
-  id : Number;
+  productos: (IProducto | IInmobiliaria | IMotor | ITecnologia);
+  id: Number;
 
-  constructor(private _ProductoService : ProductoService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _ProductoService: ProductoService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     //Recibe un id
     this.id = +this._activatedRoute.snapshot.paramMap.get('id');
 
-    this._ProductoService.getProducto(this.id);
+    this.productos = this._ProductoService.getProducto(this.id);
+    console.log(this.productos.id);
+
   }
 
 }
