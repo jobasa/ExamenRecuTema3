@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from '../services/producto.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-insertar',
@@ -23,10 +25,16 @@ export class InsertarPage implements OnInit {
   estado: Number = 1;
   precio: Number = 0;
 
-  constructor() { }
+  constructor(private _ProductoService: ProductoService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
   }
+
+  insertar(){
+    
+  }
+
 
 
   cambiar_Oculto($event) {
