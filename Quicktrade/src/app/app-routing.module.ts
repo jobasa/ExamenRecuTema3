@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'listado',
     loadChildren: () => import('./listado/listado.module').then( m => m.ListadoPageModule)
   },
+  {
+    path: 'insertar',
+    loadChildren: () => import('./insertar/insertar.module').then( m => m.InsertarPageModule)
+  },
 ];
 
 @NgModule({

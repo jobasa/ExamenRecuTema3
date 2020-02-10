@@ -19,8 +19,8 @@ export class DetailsPage implements OnInit {
     //Recibe un id
     this.id = +this._activatedRoute.snapshot.paramMap.get('id');
 
-    this.productos = this._ProductoService.getProducto(this.id);
-    console.log(this.productos.id);
+    //this.productos = this._ProductoService.getProducto(this.id);
+    //console.log(this.productos.id);
 
   }
 
