@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../services/producto.service';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { IProducto, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
 
 @Component({
   selector: 'app-insertar',
@@ -24,6 +26,7 @@ export class InsertarPage implements OnInit {
   localidad: string = "";
   estado: Number = 1;
   precio: Number = 0;
+  listadoProductos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
 
   constructor(private _ProductoService: ProductoService, private _activatedRoute: ActivatedRoute) { }
 
@@ -31,8 +34,41 @@ export class InsertarPage implements OnInit {
 
   }
 
-  insertar(){
-    
+  public alertController: AlertController
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  insertar() {
+    if (this.categoria == 1) {
+      this._ProductoService.setProducto({
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "estado": this.estado
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else if (this.categoria == 4) {
+      this._ProductoService.setProducto({
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "kilometros": this.kilometros, "anyos": this.anyos, "categoria": this.categoria, "vehiculo": this.vehiculo
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else if (this.categoria == 3) {
+      this._ProductoService.setProducto({
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "metrosCuadrados": this.metrosCuadrados, "numBanyos": this.numBanyos, "numHabitaciones": this.numHabitaciones, "localidad": this.localidad, "categoria": this.categoria
+      });
+      alert("La inserción se ha hecho correctamente");
+    } else {
+      this._ProductoService.setProducto({
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria
+      });
+      alert("La inserción se ha hecho correctamente");
+    }
   }
 
 

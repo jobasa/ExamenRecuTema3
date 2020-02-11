@@ -56,7 +56,9 @@ export class ProductoService {
 
     setProducto(producto: (IProducto | IInmobiliaria | IMotor | ITecnologia)) {
         let ref = this._db.database.ref("Productos");
-        ref.push(producto);
+        let res = ref.push(producto);
+        console.log("He insertado"+res.key);
+        
     }
 
 
