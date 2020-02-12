@@ -16,6 +16,15 @@ export class ListadoPage implements OnInit {
 
   ngOnInit() {
     //this.productos = this._ProductoService.getProductos();
+    let ref = this._ProductoService.getProductos();
+    ref.once("value", snapshot => {
+      snapshot.forEach(child => {
+        let value = child.val();
+        this.productos.push(value);
+        console.log("He encontrado "+ child.val().nombre);
+        
+      })
+    })
   }
 
 }
