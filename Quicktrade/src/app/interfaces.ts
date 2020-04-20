@@ -1,5 +1,9 @@
 import {Component} from '@angular/core';
 
+export interface IUsuario {
+    "id" : Number;
+    "nombre": string;
+}
 
 export interface IProducto {
     "id" : Number;

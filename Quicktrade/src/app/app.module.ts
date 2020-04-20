@@ -17,6 +17,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 // environment
 import { environment } from '../environments/environment';
 
+import { AngularFireAuthModule } from "@angular/fire/auth";
+
 
 
 
@@ -26,7 +28,7 @@ import { environment } from '../environments/environment';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
             AngularFireModule.initializeApp(environment.firebaseConfig),
-            AngularFireDatabaseModule],
+            AngularFireDatabaseModule, AngularFireAuthModule],
   providers: [
     StatusBar,
     SplashScreen,

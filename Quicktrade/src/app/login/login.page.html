@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">Nombre de usuario</ion-label>
+      <ion-input  type="Text" [(ngModel)]="nomUsu"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input  type="Text" [(ngModel)]="password" ></ion-input>
+    </ion-item>
+    <ion-button (click)="OnSubmitLogin()">Login</ion-button>
+    <h3></h3>
+    <ion-button [routerLink]="['/listado']" routerDirection = "root">Registrarse</ion-button>
+  </ion-list>
+</ion-content>

@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'insertar',
     loadChildren: () => import('./insertar/insertar.module').then( m => m.InsertarPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

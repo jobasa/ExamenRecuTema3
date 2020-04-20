@@ -11,7 +11,7 @@ import { ProductoService } from '../services/producto.service';
 export class ListadoPage implements OnInit {
 
   productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
-
+  //claves: String[];
   constructor(private _ProductoService : ProductoService) { }
 
   ngOnInit() {
@@ -21,6 +21,7 @@ export class ListadoPage implements OnInit {
       snapshot.forEach(child => {
         let value = child.val();
         this.productos.push(value);
+        //this.claves.push(child.key);
         console.log("He encontrado "+ child.val().nombre);
         
       })

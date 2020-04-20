@@ -21,7 +21,7 @@ export class DetailsPage implements OnInit {
     let ref = this._ProductoService.getProducto(this.id);
     ref.once("value", snapshot => {
       this.productos = snapshot.val();
-    })
+    });
     //this.productos = this._ProductoService.getProducto(this.id);
     //console.log(this.productos.id);
 
