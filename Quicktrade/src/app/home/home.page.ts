@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import { IProducto, IInmobiliaria, IMotor, ITecnologia} from '../interfaces';
 import { AlertController } from '@ionic/angular';
 
@@ -69,4 +69,4 @@ export class HomePage {
     }
   }
 
-}
+}*/

@@ -3,6 +3,7 @@ import { ProductoService } from '../services/producto.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IProducto, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-insertar',
@@ -28,7 +29,7 @@ export class InsertarPage implements OnInit {
   precio: Number = 0;
   listadoProductos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [];
 
-  constructor(private _ProductoService: ProductoService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _ProductoService: ProductoService, private _activatedRoute: ActivatedRoute, private AFauth : AngularFireAuth) { }
 
   ngOnInit() {
 
@@ -50,22 +51,22 @@ export class InsertarPage implements OnInit {
   insertar() {
     if (this.categoria == 1) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "estado": this.estado
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "estado": this.estado, "uid": this.AFauth.auth.currentUser.uid
       });
       alert("La inserción se ha hecho correctamente");
     } else if (this.categoria == 4) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "kilometros": this.kilometros, "anyos": this.anyos, "categoria": this.categoria, "vehiculo": this.vehiculo
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "kilometros": this.kilometros, "anyos": this.anyos, "categoria": this.categoria, "vehiculo": this.vehiculo, "uid": this.AFauth.auth.currentUser.uid
       });
       alert("La inserción se ha hecho correctamente");
     } else if (this.categoria == 3) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "metrosCuadrados": this.metrosCuadrados, "numBanyos": this.numBanyos, "numHabitaciones": this.numHabitaciones, "localidad": this.localidad, "categoria": this.categoria
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "metrosCuadrados": this.metrosCuadrados, "numBanyos": this.numBanyos, "numHabitaciones": this.numHabitaciones, "localidad": this.localidad, "categoria": this.categoria, "uid": this.AFauth.auth.currentUser.uid
       });
       alert("La inserción se ha hecho correctamente");
     } else {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "uid": this.AFauth.auth.currentUser.uid
       });
       alert("La inserción se ha hecho correctamente");
     }

@@ -11,6 +11,7 @@ export interface IProducto {
     "descripcion" : string;
     "precio" : Number;
     "categoria": Number;
+    "uid" : string;
 }
 
 export interface IInmobiliaria extends IProducto {
