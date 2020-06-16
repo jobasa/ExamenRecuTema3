@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { LoginService } from './services/login.service';
 
 
 
@@ -33,6 +34,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     StatusBar,
     SplashScreen,
     ProductoService,
+    LoginService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

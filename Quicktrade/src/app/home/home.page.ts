@@ -1,4 +1,4 @@
-/*import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { IProducto, IInmobiliaria, IMotor, ITecnologia} from '../interfaces';
 import { AlertController } from '@ionic/angular';
 
@@ -45,7 +45,7 @@ export class HomePage {
     this.categoria = $event.target.value;
   }
 
-  guarda(){
+  /*guarda(){
     if (this.categoria == 1) {
       this.listadoProductos.push({
         id : this.listadoProductos.length+1, nombre : this.nombre, descripcion : this.descripcion, precio : this.precio, categoria : this.categoria, estado : this.estado
@@ -67,6 +67,6 @@ export class HomePage {
       });
       alert("La inserción se ha hecho correctamente");
     }
-  }
+  }*/
 
-}*/
+}

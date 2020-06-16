@@ -9,45 +9,49 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 export class ProductoService {
 
-    /* productos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [
+    listProductos: (IProducto | IInmobiliaria | IMotor | ITecnologia)[] = [
          {
-             "id": 1,
-             "nombre": "IPhone X",
-             "descripcion": "Dispositivo movil de la marca Apple",
-             "categoria": 1,
-             "estado": 1,
-             "precio": 500
+             id: 1,
+             nombre: "IPhone X",
+             descripcion: "Dispositivo movil de la marca Apple",
+             categoria: 1,
+             estado: 1,
+             precio: 500,
+             uid: 1
+
          },
  
          {
-             "id": 2,
-             "nombre": "Samsung S9",
-             "descripcion": "Dispositivo movil de la marca Samsung",
-             "categoria": 1,
-             "estado": 2,
-             "precio": 300
+             id: 2,
+             nombre: "Samsung S9",
+             descripcion: "Dispositivo movil de la marca Samsung",
+             categoria: 1,
+             estado: 2,
+             precio: 300,
+             uid: 2
          },
  
          {
-             "id": 3,
-             "nombre": "Apartameno",
-             "descripcion": "Apartamento situado en el casco historico",
-             "categoria": 3,
-             "metrosCuadrados": 400,
-             "numBanyos": 3,
-             "numHabitaciones": 6,
-             "localidad": "Xàbia",
-             "precio": 600
+             id: 3,
+             nombre: "Apartameno",
+             descripcion: "Apartamento situado en el casco historico",
+             categoria: 3,
+             metrosCuadrados: 400,
+             numBanyos: 3,
+             numHabitaciones: 6,
+             localidad: "Xàbia",
+             precio: 600,
+             uid: 3
          },
      ];
  
  
  
-     getProductos(): (IProducto | IInmobiliaria | IMotor | ITecnologia)[] {
-         return this.productos;
+     getListProductos(): IProducto[] {
+         return this.listProductos;
      }
  
-     getProducto(id: Number): IProducto {
+    /* getProducto(id: Number): IProducto {
          return this.productos.find(x => x.id == id);
      }*/
     constructor(private _db: AngularFireDatabase) {

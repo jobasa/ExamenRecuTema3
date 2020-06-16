@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
@@ -10,19 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  nomUsu: string;
-  password: string;
+  nombreUsu: string = "";
+  password: string = "";
 
-  constructor(private authService: AuthService, public router : Router) { }
+  constructor() { }
 
   ngOnInit() {
+    
   }
 
-  OnSubmitLogin() 
-  {
-    this.authService.login(this.nomUsu, this.password).then( res =>{
-      this.router.navigate(['/inicio']);
-    }).catch(err => alert("Los datos son incorrectos o no existe el usuario"))
-  }
+
+  //EL boton de login tiene que llamar a una funcion para comprobar si el usuario existe y si existe ir a la pagina que tiene que ir y si no quedarse o mostrar un error.
+  //En el componente de insertar producto tengo que recuperar la variable del usuario que tengo guardada en el servicio de login y una vez he recuperado la variable añadirle al
+  //producto un campo usuario o propiedad usuario con la key del usuario logueado.
 
 }

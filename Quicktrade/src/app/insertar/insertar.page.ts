@@ -51,22 +51,22 @@ export class InsertarPage implements OnInit {
   insertar() {
     if (this.categoria == 1) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "estado": this.estado, "uid": this.AFauth.auth.currentUser.uid
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "estado": this.estado, "uid": 1
       });
       alert("La inserción se ha hecho correctamente");
     } else if (this.categoria == 4) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "kilometros": this.kilometros, "anyos": this.anyos, "categoria": this.categoria, "vehiculo": this.vehiculo, "uid": this.AFauth.auth.currentUser.uid
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "kilometros": this.kilometros, "anyos": this.anyos, "categoria": this.categoria, "vehiculo": this.vehiculo, "uid": 1
       });
       alert("La inserción se ha hecho correctamente");
     } else if (this.categoria == 3) {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "metrosCuadrados": this.metrosCuadrados, "numBanyos": this.numBanyos, "numHabitaciones": this.numHabitaciones, "localidad": this.localidad, "categoria": this.categoria, "uid": this.AFauth.auth.currentUser.uid
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "metrosCuadrados": this.metrosCuadrados, "numBanyos": this.numBanyos, "numHabitaciones": this.numHabitaciones, "localidad": this.localidad, "categoria": this.categoria, "uid": 1
       });
       alert("La inserción se ha hecho correctamente");
     } else {
       this._ProductoService.setProducto({
-        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "uid": this.AFauth.auth.currentUser.uid
+        "id": this.listadoProductos.length + 1, "nombre": this.nombre, "descripcion": this.descripcion, "precio": this.precio, "categoria": this.categoria, "uid": 1
       });
       alert("La inserción se ha hecho correctamente");
     }

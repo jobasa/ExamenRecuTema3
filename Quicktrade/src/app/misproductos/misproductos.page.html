@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select placeholder="Categoría" (ionChange)="cambiar_Oculto($event)" name="form.categoria" [(ngModel)] = "categoria" [interfaceOptions]="customPopoverOptions" interface="popover">
+        <ion-select-option value="1">Tecnología</ion-select-option>
+        <ion-select-option value="2">Hogar</ion-select-option>
+        <ion-select-option value="3">Inmobiliaria</ion-select-option>
+        <ion-select-option value="4">Motor</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-item *ngFor="let item of listadoProductos">
+    <ion-item-divider>
+      <ion-item>
+        Nombre: {{item.nombre}}
+      </ion-item>
+      <ion-item>
+        Descripcion: {{item.descripcion}}
+      </ion-item>
+      <ion-item>
+        Precio: {{item.precio}}€
+      </ion-item>
+      <div>
+        <ion-button color="success" [routerLink]="['/modificar/', this.id, item.key]" routerDirection="root">Modificar</ion-button>
+        <ion-button color="success" (click)="borrar(item.key)">Borrar</ion-button>
+      </div>
+    </ion-item-divider>
+  </ion-item>
+</ion-list>
+
+</ion-content>

@@ -20,6 +20,7 @@ export class ListadoPage implements OnInit {
     ref.once("value", snapshot => {
       snapshot.forEach(child => {
         let value = child.val();
+        value.id = child.key;
         this.productos.push(value);
         //this.claves.push(child.key);
         console.log("He encontrado "+ child.val().nombre);
